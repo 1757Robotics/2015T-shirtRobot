@@ -18,5 +18,5 @@ This project is designed and debugged for the sole purpose of functioning within
 - Standard FRC RoboRio
 - Microsoft Lifecam 3000
 - Logitech Gamepad F310
-- 2x Logitech Attack 3 Joystick (Tank drive)
+- 2x Logitech Attack 3 Joystick 
 
