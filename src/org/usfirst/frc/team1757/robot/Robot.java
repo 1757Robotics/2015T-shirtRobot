@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.SpeedController;
 
+import org.usfirst.frc.team1757.robot.Commons;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -31,34 +32,7 @@ public class Robot extends IterativeRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
-	
-	// Constant variables for the button codes on the F310 gamepad
-	public static final int 
-	BUTTON_A = 1, BUTTON_B = 2, BUTTON_X = 3,
-	BUTTON_Y = 4, BUTTON_LB = 5, BUTTON_RB = 6,
-	BUTTON_BACK = 7, BUTTON_START = 8, BUTTON_LS = 9, BUTTON_RS = 10;
-	
-	// Constant variable for the location of the button layout file
-	public static final String FILEPATH = "/RobotButtonLayout.txt";
-	// Array variable for button function for use with gamepad button layout
-	public String[] BUTTONFUNCTION = null;
-	
-	
-	/* Analog (raw)Axis codes
-	Left Stick Up/Dn = 2 Axis (Dn+)
-	Left Stick L/R = Axis 1 (L-)
-	Right Stick Up/Dn = Axis 5 (Dn+)
-	Right Stick L/R = Axis 4 (L-)
-	Left Trigger = Axis 3 (+)
-	Right Trigger = Axis 3 (-)
-	Gamepad Up = Axis 2(-)
-	Gamepad Dn = Axis 2(+)
-	Gamepad L = Axis 6(-)
-	Gamepad R = Axis 6(+)
-
-	NOTE: Mode switch changes Axis 2 between Left Stick Up/Dn and Gamepad Up/Dn
-	*/
-	
+		
 	//Class reference variables
 		//I don't understand why we use these, you generally aren't supposed to have null declarations. Safer?
 		//See SpeedController instantiations for alternative examples
@@ -68,27 +42,6 @@ public class Robot extends IterativeRobot {
 	SpeedController speedController;
 	Relay spikeRelay;
 	DoubleSolenoid doubleSolenoid;
-	
-	
-	//void function designed to read all 
-	public String[] readLines(String path)
-	{
-		try {
-    		Scanner filescan = new Scanner(path);
-    		 List<String> outList = Arrays.asList(); //Safe empty declaration
-    		while (filescan.hasNextLine())
-    		{
-    			outList.add(filescan.nextLine());
-    		}
-    		filescan.close();
-    		return (String[]) outList.toArray(); // Possibly dangerous type casting
-    	}
-    	catch (Exception e)
-    	{
-    		System.out.println("Error opening button layout file, will use defaults\n" + e.toString());
-    		return new String[] {};
-    	}
-	}
 	
     public void robotInit() {
     	//Object instantiation and definition for dependencies
@@ -123,7 +76,7 @@ public class Robot extends IterativeRobot {
     	
     	
     	//Load the button layout from SmartDashboard/ .txt File. Note: With albeit limited experimentation, SmartDashboard is not reliable
-    	BUTTONFUNCTION = readLines(FILEPATH);
+    	Commons.BUTTONFUNCTION = Commons.readLines(Commons.FILEPATH);
     }
 
     /**
@@ -147,9 +100,10 @@ public class Robot extends IterativeRobot {
     	 * */
         while(isEnabled() && isOperatorControl()){
         	//Example button input
-        	if (gamepad.getRawButton(BUTTON_A)){
+        	if (gamepad.getRawButton(Commons.BUTTON_A)){
+        		if (Commons.BUTTONFUNCTION[Commons.BUTTON_A] == "")
         		spikeRelay.set(Relay.Value.kForward);
-        		//Example function
+        		
         	}
         		
         }
