@@ -4,11 +4,13 @@ package org.usfirst.frc.team1757.robot;
 //Class imports from the WPILibj library
 import edu.wpi.first.wpilibj.IterativeRobot;
 
+//Added Java imports
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+//Added WPI Library imports
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Joystick;
@@ -18,8 +20,11 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.SpeedController;
 
+//Importing functions from Commons class
 import org.usfirst.frc.team1757.robot.Commons;
+
 /**
+ * WPI GENERATED COMMENT
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
  * documentation. If you change the name of this class or the package after
@@ -33,10 +38,10 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
 		
-	//Class reference variables
+	//TODO REMOVE --- Class reference variables
 		//I don't understand why we use these, you generally aren't supposed to have null declarations. Safer?
 		//See SpeedController instantiations for alternative examples
-	CANTalon talon;
+	CANTalon talon ;
 	Joystick gamepad;
 	Solenoid singleSolenoid;
 	SpeedController speedController;
@@ -46,7 +51,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	//Object instantiation and definition for dependencies
     	
-    	//The port numbers for these variables are not correct. Assure that proper values are entered prior to use.
+    	//The port numbers for these variables are not correct. Assume that proper values are entered prior to use.
     	
     	//Talon object instantiation on CAN port 0
     	//speedController = new CANTalon(0);
@@ -66,8 +71,10 @@ public class Robot extends IterativeRobot {
     	//spikeRelay object instantiation on PWM port 0; used for sprinkler valve
     	spikeRelay = new Relay(0);
     	//Relay spikeRelay = new Relay(0);
+    	//This port number is likey incorrect
     		//Note that we will likely be using more than one spikeRelay in practice; append to reflect hardware change
-    		//Incomplete: append for compressor controls
+    		//Incomplete: append for compressor controls -- or can use PCM instead
+    	
     	
     	//Double solenoid object instantiation on PWM port 1,2; used for piston control
     	DoubleSolenoid pistonControl = new DoubleSolenoid(1,2); // These port numbers are likely incorrect
@@ -87,7 +94,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during operator control
      */
     public void teleopPeriodic() {
-    	//Loop during FRC safe operator control time
+    	
     	
     	/*
     	 * In this branch of the project support for a loop & if maze based system of controller input; however,
@@ -97,7 +104,7 @@ public class Robot extends IterativeRobot {
     	 * 
     	 * */
         while(isEnabled() && isOperatorControl()){
-        	//Example button input
+        	//Loops during FRC safe operator control time
         	if (gamepad.getRawButton(Commons.BUTTON_A)){
         		if (Commons.BUTTONFUNCTION[Commons.BUTTON_A] == "")
         		spikeRelay.set(Relay.Value.kForward);
