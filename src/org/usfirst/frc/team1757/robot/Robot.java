@@ -38,7 +38,7 @@ public class Robot extends IterativeRobot {
 	
 	// Constant variable for the location of the button layout file
 	public static final String FILEPATH = "/RobotButtonLayout.txt";
-	// Array variable for button function for use with gamepad button layout
+	// Array variable for button function for use with game pad button layout
 	public String[] BUTTONFUNCTION = null;
 	
 	
@@ -140,8 +140,6 @@ public class Robot extends IterativeRobot {
     	/*
     	 * In this branch of the project support for a loop & if maze based system of controller input; however,
     	 * future branches should utilize event based input for the sake of a cleaner project and better programming practice.
-    	 * 
-    	 * 
     	 * */
         while(isEnabled() && isOperatorControl()){
         	//Example button input
