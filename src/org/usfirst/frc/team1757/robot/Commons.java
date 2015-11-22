@@ -62,7 +62,24 @@ public class Commons {
 		
 	}
 	
+	//Abstracted cannon functions
 	public static void Cannon_Fire(){
+		
+	}
+	
+	public static void Cannon_Load(){
+		
+	}
+	
+	public static void Cannon_Cycle(){
+		//Cycle the cannon by 
+	}
+	
+	public static void Cannon_Tilt_Up(){
+		
+	}
+	
+	public static void Cannon_Tilt_Down(){
 		
 	}
 }
