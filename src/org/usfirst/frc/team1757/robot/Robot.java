@@ -1,8 +1,8 @@
 
 package org.usfirst.frc.team1757.robot;
 //Class imports from the WPILibj library
-import edu.wpi.first.wpilibj.IterativeRobot;
 
+import edu.wpi.first.wpilibj.IterativeRobot;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj.SpeedController;
  * documentation. If you change the name of this class or the package after
  * creating this project, you must also update the manifest file in the resource
  * directory.
+ * 
  */
 
 public class Robot extends IterativeRobot {
