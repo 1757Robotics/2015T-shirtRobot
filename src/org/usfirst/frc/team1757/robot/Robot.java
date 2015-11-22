@@ -51,36 +51,19 @@ public class Robot extends IterativeRobot {
 	NOTE: Mode switch changes Axis 2 between Left Stick Up/Dn and Gamepad Up/Dn
 	*/
 
-	//Class reference variables
-		//I don't understand why we use these, you generally aren't supposed to have null declarations. Safer?
-		//See SpeedController instantiations for alternative examples
+	//TODO Object Typecasting, using class references
+		//Why>>?? Is null pointers an issue? 
+		//It is usually used to cast into subclasses, interfaces, or superclasses
+		//Unless we are upcasting, we shouldn't use these
+		/*
 	CANTalon talon;
 	Joystick gamepad;
 	Solenoid singleSolenoid;
 	SpeedController speedController;
 	Relay spikeRelay;
 	DoubleSolenoid doubleSolenoid;
+	*/
 	
-	
-	//void function designed to read all 
-	public String[] readLines(String path)
-	{
-		try {
-    		Scanner filescan = new Scanner(path);
-    		 List<String> outList = Arrays.asList(); //Safe empty declaration
-    		while (filescan.hasNextLine())
-    		{
-    			outList.add(filescan.nextLine());
-    		}
-    		filescan.close();
-    		return (String[]) outList.toArray(); // Possibly dangerous type casting
-    	}
-    	catch (Exception e)
-    	{
-    		System.out.println("Error opening button layout file, will use defaults\n" + e.toString());
-    		return new String[] {};
-    	}
-	}
 	
     public void robotInit() {
     	//Object instantiation and definition for dependencies
