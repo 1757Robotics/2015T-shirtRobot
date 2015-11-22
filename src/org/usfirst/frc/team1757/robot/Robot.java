@@ -50,7 +50,10 @@ public class Robot extends IterativeRobot {
 
 	NOTE: Mode switch changes Axis 2 between Left Stick Up/Dn and Gamepad Up/Dn
 	*/
-
+	//TODO Object Typecasting, using class references
+			//Why>>?? Is null pointers an issue? 
+			//It is usually used to cast into subclasses, interfaces, or superclasses
+			//Unless we are upcasting, we shouldn't use these
 	//Class reference variables
 		//I don't understand why we use these, you generally aren't supposed to have null declarations. Safer?
 		//See SpeedController instantiations for alternative examples
