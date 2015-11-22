@@ -51,7 +51,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
     	//Object instantiation and definition for dependencies
     	
-    	//The port numbers for these variables are not correct. Assume that proper values are entered prior to use.
+    	//The port numbers for these variables are not correct. Assure that proper values are entered prior to use.
     	
     	//Talon object instantiation on CAN port 0
     	//speedController = new CANTalon(0);
