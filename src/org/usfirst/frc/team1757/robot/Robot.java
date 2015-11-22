@@ -147,8 +147,10 @@ public class Robot extends IterativeRobot {
         while(isEnabled() && isOperatorControl()){
         	//Example button input
         	if (gamepad.getRawButton(BUTTON_A)){
-        		spikeRelay.set(Relay.Value.kForward);
+        		
         		//Example function
+        		spikeRelay.set(Relay.Value.kForward);
+        		//Commit directly to master
         	}
         		
         }
