@@ -74,9 +74,6 @@ public class Robot extends IterativeRobot {
     	//Append solenoid implementation to reflect hardware changes. 
     	//Likely will include second solenoid for compressor air input control.
     	
-    	
-    	//Load the button layout from SmartDashboard/ .txt File. Note: With albeit limited experimentation, SmartDashboard is not reliable
-    	Commons.BUTTONFUNCTION = Commons.readLines(Commons.FILEPATH);
     }
 
     /**

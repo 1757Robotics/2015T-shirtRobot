@@ -10,7 +10,7 @@ public class AbstractFunctions {
 	
 	public static void Compressor_Toggle()
 	{
-		//Enable the spikeRelay with the assigned port number; 
+		//Enable the spikeRelay associated with the Compressor port number; 
 		//likely will need to be appended depending on hardware implementation
 		
 	}
@@ -18,7 +18,7 @@ public class AbstractFunctions {
 	
 	//Abstracted cannon functions
 	public static void Cannon_Fire(){
-		//
+		//Enable the spikeRelay associated with the Sprinkler 
 		
 		
 	}

@@ -36,7 +36,9 @@ public class Commons {
 	public static final String FILEPATH = "/RobotButtonLayout.txt";
 	
 	// Array variable for button function for use with gamepad button layout
-	public static String[] BUTTONFUNCTION = new String[] {};
+	
+	//Load the button layout from SmartDashboard/ .txt File. Note: With albeit limited experimentation, SmartDashboard is not reliable
+	public static String[] BUTTONFUNCTION = readLines(FILEPATH);
 	
 	/* Analog (raw)Axis codes
 	Left Stick Up/Dn = 2 Axis (Dn+)
