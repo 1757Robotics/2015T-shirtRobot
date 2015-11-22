@@ -55,4 +55,14 @@ public class Commons {
 	
 	//Method purpose: Load all lines from 
 	//public static final // 
+	
+	
+	public static void Compressor_Toggle()
+	{
+		
+	}
+	
+	public static void Cannon_Fire(){
+		
+	}
 }

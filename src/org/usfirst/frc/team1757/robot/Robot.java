@@ -96,6 +96,7 @@ public class Robot extends IterativeRobot {
     	 * In this branch of the project support for a loop & if maze based system of controller input; however,
     	 * future branches should utilize event based input for the sake of a cleaner project and better programming practice.
     	 * 
+    	 * Note the structure of the code: the buttons are detected sequentially with priority on the most 
     	 * 
     	 * */
         while(isEnabled() && isOperatorControl()){
@@ -105,6 +106,8 @@ public class Robot extends IterativeRobot {
         		spikeRelay.set(Relay.Value.kForward);
         		
         	}
+        	
+        	
         		
         }
     }
