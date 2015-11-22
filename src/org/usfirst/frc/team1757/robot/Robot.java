@@ -35,13 +35,7 @@ public class Robot extends IterativeRobot {
 	BUTTON_A = 1, BUTTON_B = 2, BUTTON_X = 3,
 	BUTTON_Y = 4, BUTTON_LB = 5, BUTTON_RB = 6,
 	BUTTON_BACK = 7, BUTTON_START = 8, BUTTON_LS = 9, BUTTON_RS = 10;
-	
-	// Constant variable for the location of the button layout file
-	public static final String FILEPATH = "/RobotButtonLayout.txt";
-	// Array variable for button function for use with game pad button layout
-	public String[] BUTTONFUNCTION = null;
-	
-	
+	//TODO add mappings for the sticks
 	/* Analog (raw)Axis codes
 	Left Stick Up/Dn = 2 Axis (Dn+)
 	Left Stick L/R = Axis 1 (L-)
@@ -56,7 +50,7 @@ public class Robot extends IterativeRobot {
 
 	NOTE: Mode switch changes Axis 2 between Left Stick Up/Dn and Gamepad Up/Dn
 	*/
-	
+
 	//Class reference variables
 		//I don't understand why we use these, you generally aren't supposed to have null declarations. Safer?
 		//See SpeedController instantiations for alternative examples
@@ -118,10 +112,6 @@ public class Robot extends IterativeRobot {
     	DoubleSolenoid pistonControl = new DoubleSolenoid(1,2); // These port numbers are likely incorrect
     	//Append solenoid implementation to reflect hardware changes. 
     	//Likely will include second solenoid for compressor air input control.
-    	
-    	
-    	//Load the button layout from SmartDashboard/ .txt File. Note: With albeit limited experimentation, SmartDashboard is not reliable
-    	BUTTONFUNCTION = readLines(FILEPATH);
     }
 
     /**
