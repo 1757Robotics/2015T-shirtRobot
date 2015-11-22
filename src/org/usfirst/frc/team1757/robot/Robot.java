@@ -1,9 +1,8 @@
 
 package org.usfirst.frc.team1757.robot;
-
 //Class imports from the WPILibj library
-import edu.wpi.first.wpilibj.IterativeRobot;
 
+import edu.wpi.first.wpilibj.IterativeRobot;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -31,7 +30,6 @@ public class Robot extends IterativeRobot {
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
-	
 	// Constant variables for the button codes on the F310 gamepad
 	public static final int 
 	BUTTON_A = 1, BUTTON_B = 2, BUTTON_X = 3,
@@ -40,7 +38,7 @@ public class Robot extends IterativeRobot {
 	
 	// Constant variable for the location of the button layout file
 	public static final String FILEPATH = "/RobotButtonLayout.txt";
-	// Array variable for button function for use with gamepad button layout
+	// Array variable for button function for use with game pad button layout
 	public String[] BUTTONFUNCTION = null;
 	
 	
@@ -142,14 +140,13 @@ public class Robot extends IterativeRobot {
     	/*
     	 * In this branch of the project support for a loop & if maze based system of controller input; however,
     	 * future branches should utilize event based input for the sake of a cleaner project and better programming practice.
-    	 * 
-    	 * 
     	 * */
         while(isEnabled() && isOperatorControl()){
         	//Example button input
         	if (gamepad.getRawButton(BUTTON_A)){
-        		spikeRelay.set(Relay.Value.kForward);
         		//Example function
+        		spikeRelay.set(Relay.Value.kForward);
+        		//Commit directly to master
         	}
         		
         }
