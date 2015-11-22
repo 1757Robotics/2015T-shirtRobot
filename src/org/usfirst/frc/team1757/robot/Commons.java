@@ -55,31 +55,4 @@ public class Commons {
 	
 	//Method purpose: Load all lines from 
 	//public static final // 
-	
-	
-	public static void Compressor_Toggle()
-	{
-		
-	}
-	
-	//Abstracted cannon functions
-	public static void Cannon_Fire(){
-		
-	}
-	
-	public static void Cannon_Load(){
-		
-	}
-	
-	public static void Cannon_Cycle(){
-		//Cycle the cannon by 
-	}
-	
-	public static void Cannon_Tilt_Up(){
-		
-	}
-	
-	public static void Cannon_Tilt_Down(){
-		
-	}
 }
