@@ -35,21 +35,17 @@ public class Robot extends IterativeRobot {
 	//TODO REMOVE --- Class reference variables
 		//I don't understand why we use these, you generally aren't supposed to have null declarations. Safer?
 		//See SpeedController instantiations for alternative examples
-	CANTalon talon ;
-	Joystick gamepad;
-	Solenoid singleSolenoid;
-	SpeedController speedController;
-	Relay spikeRelay;
-	DoubleSolenoid doubleSolenoid;
+	CANTalon talon;
+	Gamepad gamepad;
+	SpeedController leftDrive;
+	SpeedController rightDrive;
 	
     public void robotInit() {
     	//I believe because these objects are 'temporary' that they do need to be private.
     	//DriveTrains are used to further break apart code and make the Robot.java more readable
-    	final SpeedController leftDrive = new DriveTrain(new SpeedController[]{new CANTalon(1), new CANTalon(3)}).setInverted(true);
-        final SpeedController rightDrive = new DriveTrain(new SpeedController[]{new CANTalon(4), new CANTalon(6)}).setInverted(false);
-    	
-    	//Joystick object instantiation on port 0; used for robot operation
-    	gamepad = new Joystick(0);
+    	SpeedController leftDrive = new DriveTrain(new SpeedController[]{new CANTalon(Constants.CAN_.FRONTRIGHT), new CANTalon(Constants.CAN_.BACKRIGHT)}).setInverted(true);
+        SpeedController rightDrive = new DriveTrain(new SpeedController[]{new CANTalon(Constants.CAN_.FRONTLEFT), new CANTalon(Constants.CAN_.BACKLEFT)}).setInverted(false);
+        
     	
     }
 
@@ -75,13 +71,13 @@ public class Robot extends IterativeRobot {
     	 * */
         while(isEnabled() && isOperatorControl()){
         	//Loops during FRC safe operator control time
-        	if (gamepad.getRawButton(Commons.BUTTON_A)){
-        		if (Commons.BUTTONFUNCTION[Commons.BUTTON_A] == "")
-        		spikeRelay.set(Relay.Value.kForward);
-        		
-        	}
-        	
-        	
+            leftDrive.set(gamepad.getX());
+            rightDrive.set(gamepad.getY());
+            
+            if (gamepad.getButton_A())
+            {
+            	//Function dependent on text?
+            }
         }
     }
     

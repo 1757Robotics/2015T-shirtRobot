@@ -32,12 +32,14 @@ public final class Constants {
         private Gamepad(){}
         public static final int PORT = 1;
         public static final float DEADZONE = 0.08f;
+        public static final float INVERTED = 0.0f;
 
     	// Constant variables for the button codes on the F310 gamepad
     	public static final int 
     	BUTTON_A = 1, BUTTON_B = 2, BUTTON_X = 3,
     	BUTTON_Y = 4, BUTTON_LB = 5, BUTTON_RB = 6,
-    	BUTTON_BACK = 7, BUTTON_START = 8, BUTTON_LS = 9, BUTTON_RS = 10;
+    	BUTTON_BACK = 7, BUTTON_START = 8, BUTTON_LS = 9, 
+    	BUTTON_RS = 10, AXIS_RTRIGGER = 3, AXIS_LTRIGGER = 3;
     	
     	/**
     	 * Analog (raw)Axis codes
