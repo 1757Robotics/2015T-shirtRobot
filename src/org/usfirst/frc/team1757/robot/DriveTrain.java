@@ -3,7 +3,10 @@ package org.usfirst.frc.team1757.robot;
 import java.util.Enumeration;
 import java.util.Vector;
 
+import edu.wpi.first.wpilibj.CANTalon;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Gyro;
 
 public class DriveTrain implements SpeedController {
     //Private members for use throughout
@@ -93,5 +96,27 @@ public class DriveTrain implements SpeedController {
             final SpeedController controller = (SpeedController) controllers.nextElement();
             controller.pidWrite(sign * output); //This is just matching the documentation
         }
+	}
+	
+	public SpeedController getController(int index)
+	{
+		int i = 0;
+        final Enumeration controllers = motorControllers.elements(); //Creates enumeration (temporary class object) for each element
+        SpeedController controller = null; //Janky null instantiation
+        while (controllers.hasMoreElements() && (i < index)) { //Must be traversed similar to an iterator
+            controller = (SpeedController) controllers.nextElement();
+            ++index;
+        }
+        return controller;
+	}
+	
+	public void MecanumDrive(Gamepad gamepad)
+	{
+        //RobotDrive roboDrive = new RobotDrive((SpeedController leftDrive = (new CANTalon(Constants.CAN_.BACKLEFT))), 
+        //		(SpeedController rightDrive = (new CANTalon(Constants.CAN_.BACKRIGHT))));
+    	Gyro gyroMeter = new Gyro(Constants.AIO_.GYRO);
+		RobotDrive roboDrive = new RobotDrive(getController(0), getController(1), getController(2), getController(3));
+		
+        roboDrive.mecanumDrive_Cartesian(gamepad.getX(), gamepad.getY(), gamepad.getTwist(), gyroMeter.getAngle());
 	}
 }

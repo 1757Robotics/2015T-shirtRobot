@@ -16,16 +16,35 @@ public final class Constants {
     	private CAN_(){};
     	
     	public static final int 
-    	FRONTRIGHT = 0, FRONTLEFT = 0, BACKRIGHT = 0, BACKLEFT = 0;
+    	FRONTLEFT = 0, FRONTRIGHT = 1, BACKLEFT = 2, BACKRIGHT = 3, CANNON = 4;
+    }
+    
+    public static final class PCM_ {
+    	private PCM_(){};
+    	
+    	public static final int 
+    	SOLENOID_TANKSELECT = 1, SOLENOID_PISTON_CANNON_SEAL = 2, SOLENOID_PISTON_CANNON_CANISTER = 3,
+    	SOLENOID_SPRINKLERVALVE = 5;
+    	
+    }
+    
+    public static final class AIO_{
+    	private AIO_(){};
+    	
+    	public static final int 
+    	GYRO = 0;
+    }
+    
+    public static final class DIO_{
+    	private DIO_(){};
+    	
+    	public static final int 
+    	PRESSUREGAUGELOW = 0, PRESSUREGAUGEHIGH = 0;
     }
     
     public static final class PWM_ {
-    	private PWM_(){};
-    	
-    	public static final int 
-    	COMPRESSOR = 0, SOLENOID_PISTON_CANNON_SEAL = 0, SOLENOID_PISTON_CANNON_CANISTER = 0,
-    	SOLENOID_SPRINKLERVALVE = 0;
-    	
+    	public static final int
+    	COMPRESSOR_CANNON = 0, COMPRESSOR_SOLENOID = 1; 
     }
     
     public static final class Gamepad {

@@ -52,6 +52,10 @@ public class Gamepad {
         return axisInversion * controlBackend.getY();
     }
     
+    public double getTwist() {
+    	return controlBackend.getTwist();
+    }
+    
     //Check if button is pressed
     public boolean getButton(final int button) {
         return controlBackend.getRawButton(button);
@@ -108,5 +112,32 @@ public class Gamepad {
     	else
     		return false;
     }
+    
+    
+ // Constant variable for the location of the button layout file
+ 	public static final String FILEPATH = "/RobotButtonLayout.txt";
+ 	
+ 	// Array variable for button function for use with gamepad button layout
+ 	
+ 	//Load the button layout from SmartDashboard/ .txt File. Note: With albeit limited experimentation, SmartDashboard is not reliable
+ 	public static String[] BUTTONFUNCTION = Commons.readLines(FILEPATH);
+ 	
+ 	/* Analog (raw)Axis codes
+ 	Left Stick Up/Dn = 2 Axis (Dn+)
+ 	Left Stick L/R = Axis 1 (L-)
+ 	Right Stick Up/Dn = Axis 5 (Dn+)
+ 	Right Stick L/R = Axis 4 (L-)
+ 	Left Trigger = Axis 3 (+)
+ 	Right Trigger = Axis 3 (-)
+ 	Gamepad Up = Axis 2(-)
+ 	Gamepad Dn = Axis 2(+)
+ 	Gamepad L = Axis 6(-)
+ 	Gamepad R = Axis 6(+)
+
+ 	NOTE: Mode switch changes Axis 2 between Left Stick Up/Dn and Gamepad Up/Dn
+ 	*/
+ 	
+ 	//Method purpose: Load all lines from 
+ 	//public static final // 
     
 }
